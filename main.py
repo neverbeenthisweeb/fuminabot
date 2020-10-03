@@ -4,14 +4,7 @@ import telegram
 from telegram.ext import CommandHandler, Updater
 
 from log import logger
-
-
-def start(update: telegram.update.Update, context: telegram.ext.callbackcontext.CallbackContext):
-    logger.info(
-        "Received an update on start handler - {}".format(update))
-    context.bot.send_message(
-        chat_id=update.effective_chat.id, text="Hi, I am Fumina Hoshino!")
-
+from telegram_handler import echo_handler, start_handler
 
 if __name__ == "__main__":
     log_ctx = {}
@@ -26,11 +19,9 @@ if __name__ == "__main__":
     # introduce dispatcher locally
     dispatcher = updater.dispatcher
 
-    # define handler
-    start_handler = CommandHandler('start', start)
-
-    # register handler to dispatcher
+    # register handlers to dispatcher
     dispatcher.add_handler(start_handler)
+    dispatcher.add_handler(echo_handler)
 
     # start bot
     logger.info("About to start a Telegram bot - {}".format(log_ctx))
