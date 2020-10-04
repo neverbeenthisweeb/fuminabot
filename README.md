@@ -13,3 +13,4 @@ A telegram bot based on the python-telegram-bot [introduction](https://github.co
 ### Features
 * `start_handler` : Replies with a greeting text on a `/start` command.
 * `echo_handler` : Replies with the same message on any non-command incoming messages.
+* `img_handler` : Replies with a pict of Fumina on a `/img` command.
