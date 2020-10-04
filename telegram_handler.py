@@ -25,7 +25,6 @@ def img(update: telegram.update.Update, context: telegram.ext.callbackcontext.Ca
     logger.debug(
         "Received an update on img handler - {}".format(update))
     # get image
-    # TODO: Write a helper to get a random image from /imgs folder.
     img_file = open("imgs/{}".format(_get_img()), "rb")
 
     # get quotes for caption
